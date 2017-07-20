@@ -5,15 +5,14 @@ bot.on('message', function (message){
     if (message.content === '%ping'){
         message.channel.send('pong')
     }
-})
-/*
-bot.on('message', function (message){
+    /*
     if (message.content === '%membre'){
         var number = guild.memberCount
         message.channel.send('nombre de membre '+Discord.guild)
     }
+    */
 })
-*/
+
 
 bot.login('token')
 

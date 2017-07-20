@@ -1,0 +1,153 @@
+Laink - Aujourd'hui à 01:11
+Les Loups-Garous:
+
+Chaque nuit, ils égorgent un Villageois. 
+Le jour ils se font passer pour des Villageois afin de ne pas être démasqués.(édité)
+-----
+les Simples Villageois:
+
+Il n’a aucune compétence particulière, il faut juste que le joueur soit très intuitif.(édité)
+----
+Laink - Aujourd'hui à 02:49
+la Voyante:
+
+Chaque nuit, elle peut désigner une personne dont elle découvrira secrètement l'identité. C'est un personnage puissant, si vous êtes vous-même la Voyante, ne vous dévoilez pas trop vite sous peine de vous faire tuer au cours de la prochaine nuit par les Loups-Garous.
+----
+la Sorcière:
+
+Elle possède deux potions, une de guérison et une d'empoisonnement, qu'elle peut utiliser une fois chacune au cours de la partie. Une fois que les Loups-Garous ont désigné leurs victime, la Sorcière en prend connaissance puis elle a la possibilité de ne rien faire, de sauver la victime et/ou de tuer quelqu'un d'autre. La Sorcière peut se sauver elle-même. Bien que les potions de la Sorcière soient limitées, le Livreur peut lui en apporter une en bonus s'il parvient à la découvrir.
+----
+Cupidon:
+
+Durant la toute première nuit de la partie, il va désigner deux personnes qui seront amoureuses jusqu'à la fin du jeu. Il peut également se mettre lui même en couple s'il le souhaite. Si l'une des deux personnes vient à mourir, l'autre meurt immédiatement de désespoir. Les Amoureux se reconnaissent et peuvent se parler sur un forum privé.
+Il existe plusieurs type de couple:
+-Le couple de Villageois: ce couple la ne change pas d'objectif et doit éliminer les Loups-Garous.
+-Le couple de Loups-Garous: il ne change pas non plus d'objectif, et doit éliminer les Villageois.
+-Le couple Traître: Les combinaisons Villageois/Loup-Garou, Villageois/Indépendant ou Loup-Garou/Indépendant sont appelées des couples traîtres. Leurs but est d'être les deux derniers survivants. Sacré épine dans le pied en clair.(édité)
+Les Amoureux ne peuvent en aucune façon voter l'un contre l'autre.
+----
+le Chasseur: 
+
+Il n'a aucun rôle particulier à jouer tant qu'il est vivant. Mais dès qu'il meurt – qu'il soit tué par les Loups-Garous ou suite à un vote des Villageois — il peut désigner une personne qui mourra également sur-le-champ. Si vous êtes Chasseur, surveillez donc attentivement les transitions Jour/Nuit pour faire part au MDJ de votre décision.
+----
+Laink - Aujourd'hui à 03:03
+la Petite Fille:
+
+De base, la Petite Fille est un personnage qui peut ouvrir les yeux discrètement en même temps que les Loups-Garous et peut ainsi les identifier. 
+
+Adaptation sur forum: 
+La Petite Fille dit au MDJ la personne chez qui elle veut se cacher parmi la liste des participants.
+
+Joueur A
+Joueur B
+Joueur C
+Joueur D
+Joueur E
+
+(On considère que le premier (ici le Joueur A) et le dernier (ici le Joueur E) sont à côté)
+
+Ici par exemple, la Petite Fille décide de se cacher chez le Joueur C.
+
+Si le Joueur A ou le Joueur E est attaqué pendant la nuit, rien ne se passe.
+Si le Joueur C est attaqué pendant la nuit, la Petite Fille est repérée et sert de repas pour les Loups à la place de la victime originelle.
+Si le Joueur B ou le Joueur D est attaqué pendant la nuit, la Petite Fille étant proche arrive à distinguer un des Loups. Donc le MDJ lui donne donc un des noms au hasard.
+----
+le Voleur:
+
+Le Voleur reçoit lors de la première nuit la possibilité de choisir son rôle parmi deux autres rôles non-distribués. S'il n'en choisit aucun il est considéré comme un Simple Villageois.
+----
+le Salvateur:
+
+Le Salvateur peut désigner chaque nuit un joueur qu'il protègera. Si ce joueur est la victime désignée par les Loups-Garous durant cette même nuit, il survit à leur assaut. Le Salvateur peut éventuellement se protéger lui-même, mais il ne peut pas protéger la même personne deux tours de suite. Cette protection ne marche qu'avec les Loups-Garous. Elle ne marchera pas contre une potion de mort ou une malédiction par exemple.
+----
+l'Idiot du Village:
+
+Il n'a pas de rôle particulier étant vivant mais s'il est lynché au bûcher par les joueurs, ceux-ci le gracient immédiatement et son rôle est dévoilé. Suite à cela, l'Idiot du Village reste en vie, mais ne peut plus voter ni être élu maire du village. S'il assumait ce rôle à son lynchage,  ce dernier est supprimé jusqu'à la fin de la partie. Il n'est évidement pas gracié s'il meurt d'une autre façon que par le bûcher.
+----
+le Bouc Émissaire:
+
+En cas d'égalité au cours du vote d'un bûcher, c'est le Bouc émissaire qui meurt à la place. Cependant, à sa mort, il a le droit de désigner qui votera ou non au bûcher suivant. Si toutes les personnes désignées pour voter meurent d'une façon ou d'une autre avant le bûcher suivant, personne ne sera éliminé par le village ce tour-ci.
+----
+l'Ancien:
+
+Il est immunisé à la première attaque des Loups-Garous mais meurt s'il est attaqué une seconde fois par ces derniers. Même règle s'il est attaqué par le Traître ou le Schizophrène. L'Ancien n'est pas averti quand il perd sa première vie.
+Si le Salvateur le protège et que les Loups le désignent pour la première fois, sa vie bonus n'est pas utilisée.
+Si la Sorcière le protège avec sa potion de vie alors que l'Ancien n'avait pas encore perdu sa vie bonus, alors il survit mais sa vie bonus est quand même consommée tout comme la potion de vie.
+Cependant si l'Ancien vient à mourir d'une autre façon alors non seulement il mourra directement mais tout les pouvoirs Villageois seront également perdus pour le restant de la partie.
+----
+le Joueur de Flûte: (Indépendant)
+
+Prérequis: 10 Joueurs
+
+Ennemi à la fois des Villageois et des Loups-Garous, le Joueur de Flûte a la possibilité de charmer chaque nuit un ou deux joueurs (selon la règle appliquée dans la partie). Les joueurs charmés se reconnaissent et peuvent discuter entre eux sur un forum à part. Si, à n'importe quel moment, le Joueur de Flûte est en vie et que tous les autres joueurs vivants ont étés charmés, le Joueur de Flûte gagne immédiatement la partie en solo. Le Joueur de Flûte ne peut pas se charmer lui même.
+----
+le Corbeau:
+
+Il peut désigner un joueur chaque nuit. Ce joueur aura automatiquement deux voix contre lui au cours du prochain bûcher. Le Corbeau est donc un personnage important car étant avec les Villageois, il va essayer de désigner logiquement une personne qu'il pense être le Loup-Garou.
+----
+le Loup Blanc: (Indépendant)(édité)
+
+Prérequis: 16 Joueurs
+
+Il est différent des autres Loups-Garous, qui eux sont persuadés qu'il est dans leur camp. En plus de comploter de nuit avec les autres Loups-Garous pour désigner une victime, il peut également choisir d'éliminer un simple Loup-Garou durant chaque nuit paire dans un forum à part. Il gagne la partie s'il parvient à être le dernier survivant.
+----
+l'Ange: (Indépendant)
+
+Le but de l'Ange est de se faire éliminer au cours du premier bûcher. S'il y parvient, il gagne la partie seul. Sinon il devient un Simple Villageois.
+----
+l'Alchimiste et le Moine:
+
+Ils possèdent chacun une des potions de la Sorcière. l'Alchimiste possède celle de mort et le Moine celle de vie. Cependant rien n'oblige que l'un est présent lors d'une partie, l'autre le soit également.
+----
+l'Arnacœur: (célibataire)
+
+Prérequis: Cupidon
+
+Son but est de découvrir qui est en couple, pour ce faire il demande chaque nuit au MDJ si tel Joueur est Amoureux. S'il parvient à trouver l'un des deux Amoureux il devient alors son Amant. Ce dernier en est évidement informé mais pas l'autre Amoureux. Du coup:
+
+Il est interdit aux deux Amants de voter l'un contre l'autre et au Trompé de voter contre l'Infidèle mais plus l'inverse!  
+
+Si l'Amant meurt, il entraîne l'Infidèle avec lui. Le Trompé, découvrant qu'il a été dupé, est tellement énervé qu'il rejette son amour mais ne meurt pas de désespoir.
+Si l'Infidèle meurt, il entraîne les deux autres dans sa mort, puisque les deux l'aiment.
+Si le Trompé meurt, il meurt seul.
+----
+l'Avocat: (Indépendant)
+
+Pendant la première Nuit, l'Avocat choisit deux joueurs autres que lui-même, qui deviennent ses clients. L'Avocat ne connait ni le rôle ni le camp de ses clients.
+La condition de victoire de l'Avocat est de faire en sorte qu'au moins un des deux clients remporte la partie vivant. (Ce qui signifie que la victoire de l'Avocat suppose la victoire d'un autre camp dans la partie).
+En conséquence, à la mort du dernier client, l'Avocat est aussitôt éliminé de la partie. A l'inverse, la mort de l'Avocat n'a aucune incidence sur ses clients.
+Les clients ne se connaissent pas entre eux, ne connaissent pas non plus l'Avocat et ne sont pas informé de leur statut de client.
+Toute tentative de mise en couple de l'Avocat échoue.
+----
+le Berger:
+
+Il possède deux ou trois moutons (décision du MDJ selon le nombre de joueur) qu'il peut envoyer chaque nuit chez n’importe quel joueur, dont lui-même. Si les Loups-Garous attaquent un Villageois protégé par un mouton, ils dévoreront à le mouton à sa place mais s'il envoie un mouton chez un Loup-Garou, celui-ci sera également dévoré (en plus de la victime).
+----
+le Chaman:
+
+Il a la possibilité d'invoquer les esprits la nuit. Il saura ce que les morts disent mais il ne saura pas qui dit quoi. Cependant, chaque Villageois/Indépendant ne pourra poster qu'un seul message alors que les Loups-Garous pourront poster autant de message qu'il y a de Villageois morts.
+Exemple 1 : les Joueurs A, B et C sont morts Villageois et le Joueur D est mort Loup-Garou. Le Joueur D pourra poster trois messages tandis que les Joueurs A, B et C ne pourront en poster qu'un seul chacun.
+Exemple 2 : les Joueurs A, B et C sont morts Villageois et les Joueurs D et E sont morts Loups-Garous. Dans cette situation les Joueurs D et E pourront à eux deux poster trois messages. Les trois autres ne posteront encore une fois qu'un message chacun.
+----
+le Chien:
+
+De base le Chien n'a aucun pouvoir et est considéré comme un Simple Villageois. Le Maire a pour objectif de nourrir le Chien chaque nuit, en écrivant en gras: "J'ai nourri le Chien". Si jamais le Maire oublie de le nourrir, il se transformera alors en Loup-Garou et rejoindra leur camp au lever du jour.
+----
+l'Enfant Sauvage:
+
+L'enfant sauvage choisit un autre joueur au début de la partie qui devient son modèle. Si le modèle meurt, l'enfant sauvage devient un loup-garou.
+----
+le Renard:
+
+La nuit, à l'appel du meneur, il désigne trois joueurs voisins. Si au moins un de ces joueurs est loup-garou, le renard peut recommencer plus tard. (N'est pas obligé de le faire chaque nuit). Par contre, si ce sont trois non loups-garous, il perd son pouvoir définitivement en innocentant trois personnes.
+----
+la Servante Dévouée:
+
+La servante dévouée "se sacrifie" à la place d'un autre joueur choisi durant le vote (ou plus exactement change de rôle sans disparaître du jeu). Le joueur qui joue la servante échange la carte de la servante avec la carte du personnage qui vient d'être désigné comme mise à mort par le village (sans la révéler au village). Le joueur qui joue la servante joue maintenant cette carte, tandis que le joueur désigné à l'origine est bel et bien éliminé... mais avec la carte de la servante. En bref, la servante peut voler la carte d'un joueur mis à mort et donc prendre son pouvoir.(édité)
+----
+les Trois frères:
+
+les deux soeurs:
+
+Les 3 frères / 2 sœurs durant toutes les nuits, ils peuvent discuter ensembles ensemble et décident ce qu'ils vont faire pendant le jour, donc pour qui ils vont voter. Ce sont, sinon, de simples villageois. Ces cartes sont utiles dans les grands groupes de joueurs, puisque cela crée des sous-groupes de villageois qui se connaissent.
+----

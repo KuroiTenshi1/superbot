@@ -3,6 +3,7 @@ const bot = new Discord.Client()
 const Google = require('./commands/google')
 const Timer = require('./commands/timer')
 var jour = 1
+var players = [];
 
 //OBJECT CONSTRUCTOR - Player
 function player(pseudo, role, alive) {
@@ -58,13 +59,13 @@ bot.on('message', function (message){
     
     //Pour sinscrire dans le loup-garou et creer un objet Joueur
     if(message.content === 'lg!register'){
-        var players = new player(message.member.displayName, "Villageois", true);
-        message.channel.send('Le joueur '+ message.member.displayName + ' a bien ete enregistre')
+        players[message.member.displayName] = new player(message.member.displayName, "Villageois", true)
+        message.channel.send('Le joueur '+ players[message.member.displayName].pseudo + ' est inscrit sous le role de ' + players[message.member.displayName].role)
     }
     
     //Pour tester lobjet Joueur
-    if(message.content === 'lg!players'){
-        message.channel.send('Le joueur '+ players.pseudo + ' est inscrit sous le role de ' + players.role)
+    if(message.content === 'lg!me'){
+        message.channel.send('Vous etes bien '+ players[message.member.displayName].pseudo + ' dont le role est ' + players[message.member.displayName].role)
     }
     
     

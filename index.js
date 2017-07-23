@@ -4,6 +4,13 @@ const Google = require('./commands/google')
 const Timer = require('./commands/timer')
 var jour = 1
 
+//OBJECT CONSTRUCTOR - Player
+function player(pseudo, role, alive) {
+    this.pseudo = pseudo;
+    this.role = role;
+    this.alive = alive;
+}
+
 bot.on('ready', function(){
     //bot.user.setAvatar('./img/partial-solar-eclipse-clouds.jpg').catch(console.error)
     //bot.user.setUsername('Eclipse').catch(console.error)
@@ -47,6 +54,20 @@ bot.on('message', function (message){
         message.channel.send('\@Villageois \r C\'est la fin')
         return jour=1
     }
+    
+    
+    //Pour sinscrire dans le loup-garou et creer un objet Joueur
+    if(message.content === 'lg!register'){
+        var players = new person(message.member.displayName, "Villageois", True);
+        message.channel.send('Le joueur '+ message.member.displayName + ' a bien ete enregistre' )
+    }
+    
+    //Pour tester lobjet Joueur
+    if(message.content === 'lg!players'){
+        message.channel.send('Le joueur '+ players.pseudo + ' est inscrit sous le role de ' + players.role)
+    }
+    
+    
     //Gestion du serveur
     // ne marche pas
     if (message.content === 'lg!membre'){

@@ -58,8 +58,8 @@ bot.on('message', function (message){
     
     //Pour sinscrire dans le loup-garou et creer un objet Joueur
     if(message.content === 'lg!register'){
-        var players = new person(message.member.displayName, "Villageois", True);
-        message.channel.send('Le joueur '+ message.member.displayName + ' a bien ete enregistre' )
+        var players = new player(message.member.displayName, "Villageois", true);
+        message.channel.send('Le joueur '+ message.member.displayName + ' a bien ete enregistre')
     }
     
     //Pour tester lobjet Joueur
@@ -79,4 +79,4 @@ bot.on('message', function (message){
         return message.channel.send('disp '+number)
     }
 })
-bot.login('token')
+bot.login('MzM3MjA3MDUwNzkyNzMwNjI0.DFD6zw.bOd4KWsriFrrAzS2rwIbXw3xRW4')

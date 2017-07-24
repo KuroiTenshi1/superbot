@@ -4,6 +4,8 @@ const Google = require('./commands/google')
 const Timer = require('./commands/timer')
 var jour = 1
 var players = [];
+var names=[];
+var roles=[];
 
 //OBJECT CONSTRUCTOR - Player
 function player(pseudo, role, alive) {
@@ -59,6 +61,7 @@ bot.on('message', function (message){
     
     //Pour sinscrire dans le loup-garou et creer un objet Joueur
     if(message.content === 'lg!register'){
+        names.push(message.member.displayName)
         players[message.member.displayName] = new player(message.member.displayName, "Villageois", true)
         message.channel.send('Le joueur '+ players[message.member.displayName].pseudo + ' est inscrit sous le role de ' + players[message.member.displayName].role)
     }
@@ -67,7 +70,28 @@ bot.on('message', function (message){
     if(message.content === 'lg!me'){
         message.channel.send('Vous etes bien '+ players[message.member.displayName].pseudo + ' dont le role est ' + players[message.member.displayName].role)
     }
-    
+
+    //Pour tester lobjet Joueur
+    if(message.content === 'lg!start'){
+        var number = names.length
+        if (number <= 8){
+            roles=["cupidon","enfant sauvage","voyante","salvateur","loup-garou","sorcière"]
+        } else if (number > 8 && number <=11){
+            roles=["cupidon","enfant sauvage","voyante","salvateur","loup-garou", "loup-garou","sorcière","chasseur"]
+        } else {
+            roles=["cupidon","enfant sauvage","voyante","salvateur","loup-garou", "loup-garou","sorcière","chasseur", "frere","frere","frere"]
+        }
+
+        var distribution = shuffleArray(roles)
+
+        for (i=0;i<distribution.length;i++){
+            players[names[i]].role= distribution[i]
+        }
+
+        message.channel.send('La partie vient de se lancer avec '+ number + ' joueurs')
+    }
+
+
     
     //Gestion du serveur
     // ne marche pas
@@ -80,4 +104,17 @@ bot.on('message', function (message){
         return message.channel.send('disp '+number)
     }
 })
+
+
+
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
+
 bot.login('MzM3MjA3MDUwNzkyNzMwNjI0.DFD6zw.bOd4KWsriFrrAzS2rwIbXw3xRW4')

@@ -61,20 +61,39 @@ bot.on('message', function (message){
     
     //Pour sinscrire dans le loup-garou et creer un objet Joueur
     if(message.content === 'lg!register'){
-        names.push(message.member.displayName)
-        players[message.member.displayName] = new player(message.member.displayName, "Villageois", true)
-        message.channel.send('Le joueur '+ players[message.member.displayName].pseudo + ' est inscrit sous le role de ' + players[message.member.displayName].role)
+        var id = message.member.id.toString() //Cette variable sert à identifier le joueur
+        var registered = false //Cette variable sert à savoir si le joueur a deja ete identifie
+
+
+        for (i=0; i<names.length;i++){ //recherche dans l'array names[] pour savoir si le joueur est deja inscrit dedans. Si oui, registered=true
+            if (names[i]===id){
+                var registered = true
+            }
+        }
+
+
+         if (registered===false){ //si la personne n'a pas ete trouvée dans l'array name[], le bot cree un nouveau joueur
+            players[id] = new player(message.member.displayName, "Villageois", true) //creation de l'objet joueur
+            names.push(id) //rajoute l'id du joueur dans la liste des joueurs enregistrés
+            message.channel.send('Le joueur '+ players[id].pseudo + ' est inscrit sous le role de ' + players[id].role)
+         } else {
+            message.channel.send('Le joueur '+ players[id].pseudo + ' est deja inscrit sous le role de ' + players[id].role) //dans le cas ou le joueur ete deja enregistre par le bot
+         }
     }
     
     //Pour tester lobjet Joueur
     if(message.content === 'lg!me'){
-        message.channel.send('Vous etes bien '+ players[message.member.displayName].pseudo + ' dont le role est ' + players[message.member.displayName].role)
+        message.channel.send('Vous etes bien '+ players[message.member.id.toString()].pseudo + ' dont le role est ' + players[message.member.id.toString()].role)
     }
 
-    //Pour tester lobjet Joueur
+    //Pour lancer la partie et distribuer les roles
     if(message.content === 'lg!start'){
-        var number = names.length
-        if (number <= 8){
+        var number = names.length //determine le nombre de joueurs enregistrés
+
+        //determine les roles à distribuer en fonction du nombre de joueurs
+        if (number <= 6){
+            roles=["loup-garou","voyante","salvateur","sorcière"]
+        } else if (number > 6 & number <= 8){
             roles=["cupidon","enfant sauvage","voyante","salvateur","loup-garou","sorcière"]
         } else if (number > 8 && number <=11){
             roles=["cupidon","enfant sauvage","voyante","salvateur","loup-garou", "loup-garou","sorcière","chasseur"]
@@ -82,9 +101,9 @@ bot.on('message', function (message){
             roles=["cupidon","enfant sauvage","voyante","salvateur","loup-garou", "loup-garou","sorcière","chasseur", "frere","frere","frere"]
         }
 
-        var random_names =shuffleArray(names)
+        var random_names=shuffleArray(names) //melange les joueurs avant de distribuer les roles
 
-        for (i=0;i<roles.length;i++){
+        for (i=0;i<random_names.length;i++){ //distribution des roles
             players[random_names[i]].role = roles[i]
         }
 
@@ -117,4 +136,4 @@ function shuffleArray(array) {
     return array;
 }
 
-bot.login('token')
+bot.login('MzM3MjA3MDUwNzkyNzMwNjI0.DFD6zw.bOd4KWsriFrrAzS2rwIbXw3xRW4')

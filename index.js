@@ -82,10 +82,10 @@ bot.on('message', function (message){
             roles=["cupidon","enfant sauvage","voyante","salvateur","loup-garou", "loup-garou","sorcière","chasseur", "frere","frere","frere"]
         }
 
-        var distribution = shuffleArray(roles)
+        var random_names =shuffleArray(names)
 
-        for (i=0;i<distribution.length;i++){
-            players[names[i]].role= distribution[i]
+        for (i=0;i<roles.length;i++){
+            players[random_names[i]].role = roles[i]
         }
 
         message.channel.send('La partie vient de se lancer avec '+ number + ' joueurs')

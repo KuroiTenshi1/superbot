@@ -117,4 +117,4 @@ function shuffleArray(array) {
     return array;
 }
 
-bot.login('MzM3MjA3MDUwNzkyNzMwNjI0.DFD6zw.bOd4KWsriFrrAzS2rwIbXw3xRW4')
+bot.login('token')

@@ -14,6 +14,8 @@ function player(pseudo, role, alive) {
     this.alive = alive;
 }
 
+
+
 bot.on('ready', function(){
     //bot.user.setAvatar('./img/partial-solar-eclipse-clouds.jpg').catch(console.error)
     //bot.user.setUsername('Eclipse').catch(console.error)
@@ -21,40 +23,44 @@ bot.on('ready', function(){
 })
 
 bot.on('guildMemberAdd', function(member){
-    member.createDM().then(function(channel){
-        return channel.send('Bienvenue sur le serveur '+member.displayName)
-    }).catch(console.error)
+    var textChannel = member.guild.channels.find('name', 'general')
+    textChannel.send('Ho merde '+member.displayName+' est venue nous faire chier')
 })
 
+bot.on('guildMemberRemove', function(member){
+    var textChannel = member.guild.channels.find('name', 'general')
+    textChannel.send('Enfin débarassé de '+member.displayName)
+})
 
 bot.on('message', function (message){
 
+    const Village = message.guild.channels.find('name', 'village')
+    const Vote = message.guild.channels.find('name', 'vote')
+
+    console.log(message.content)
+
+
     //Message écrit
 
-    if (Google.match(message)){
-        return Google.action(message)
-    }
-    if (Timer.match(message)){
-        return Timer.action(message)
-    }
+    let commandUsed = Google.parse(message) || Timer.parse(message)
     if (message.content === 'lg!ping'){
         return message.channel.send('pong')
     }
     if (message.content === 'lg!nuit'){
-        return message.channel.send('La nuit tombe les \@Villageois s\'endorment')
+        return Village.send('La nuit tombe les \@Villageois s\'endorment')
     }
     if (message.content === 'lg!jour'){
-        return message.channel.send('La jour ce l\ève les \@Villageois se r\éveille')
+        return Village.send('Le jour ce l\ève les \@Villageois se r\éveille')
     }
     if (message.content === 'lg!vote'){
-        return message.channel.send('\@Villageois \r C\'est l\'heure des votes \#vote')
+        return Village.send('\@Villageois \r C\'est l\'heure des votes \#vote')
     }
     if(message.content === 'lg!clos'){
-        message.channel.send('\@Villageois \r C\'est la fin des votes fin du jour: '+jour)
+        Vote.send('\@Villageois \r C\'est la fin des votes fin du jour: '+jour)
         return jour=jour+1
     }
     if(message.content === 'lg!fin'){
-        message.channel.send('\@Villageois \r C\'est la fin')
+        Village.send('\@Villageois \r C\'est la fin de la partie')
         return jour=1
     }
     
@@ -83,7 +89,9 @@ bot.on('message', function (message){
     
     //Pour tester lobjet Joueur
     if(message.content === 'lg!me'){
-        message.channel.send('Vous etes bien '+ players[message.member.id.toString()].pseudo + ' dont le role est ' + players[message.member.id.toString()].role)
+        try{
+            message.channel.send('Vous etes bien '+ players[message.member.id.toString()].pseudo + ' dont le role est ' + players[message.member.id.toString()].role)
+        }catch(e){console.log(e)}
     }
 
     //Pour lancer la partie et distribuer les roles
@@ -113,13 +121,12 @@ bot.on('message', function (message){
 
     
     //Gestion du serveur
-    // ne marche pas
-    if (message.content === 'lg!membre'){
-        var number = guild.memberCount
-        return message.channel.send('nombre de membre '+number)
+    if (message.content === 'lg!membre'){ // compte le nombre de membre dans le serveur
+        var number = message.guild.memberCount
+        return message.channel.send('nombre de membres '+number)
     }
-    if (message.content === 'lg!dispoguild'){
-        var number = guild.available
+    if (message.content === 'lg!dispoguild'){ // verifie si guild existe
+        var number = message.guild.available
         return message.channel.send('disp '+number)
     }
 })
@@ -136,4 +143,4 @@ function shuffleArray(array) {
     return array;
 }
 
-bot.login('MzM3MjA3MDUwNzkyNzMwNjI0.DFD6zw.bOd4KWsriFrrAzS2rwIbXw3xRW4')
+bot.login('token')

@@ -1,4 +1,6 @@
-module.exports = class Google{
+const Command = require('./command')
+
+module.exports = class Google extends Command {
 
     static match(message){
         return message.content.startsWith('lg!google')

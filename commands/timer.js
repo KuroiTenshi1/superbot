@@ -1,4 +1,6 @@
-module.exports = class timer{
+const Command = require('./command')
+
+module.exports = class Timer extends Command {
 
     static match(message){
         return message.content.startsWith('lg!timer')

@@ -2,6 +2,7 @@ const Discord = require('discord.js')
 const bot = new Discord.Client()
 const Google = require('./commands/google')
 const Timer = require('./commands/timer')
+const Vote = require('./commands/vote')
 var jour = 1
 var players = [];
 var names=[];
@@ -24,12 +25,12 @@ bot.on('ready', function(){
 
 bot.on('guildMemberAdd', function(member){
     var textChannel = member.guild.channels.find('name', 'general')
-    textChannel.send('Ho merde '+member.displayName+' est venue nous faire chier')
+    textChannel.send('Ho merde <@!'+member.id+'> est venue nous faire chier')
 })
 
 bot.on('guildMemberRemove', function(member){
     var textChannel = member.guild.channels.find('name', 'general')
-    textChannel.send('Enfin débarassé de '+member.displayName)
+    textChannel.send('Enfin débarassé de <@!'+member.id+'>')
 })
 
 bot.on('message', function (message){
@@ -46,21 +47,28 @@ bot.on('message', function (message){
     if (message.content === 'lg!ping'){
         return message.channel.send('pong')
     }
+    if (message.content === 'lg!out'){
+        return Village.ifzhiofhzi()
+    }
     if (message.content === 'lg!nuit'){
-        return Village.send('La nuit tombe les \@Villageois s\'endorment')
+        return Village.send('La nuit tombe les <@&336273519749103617> s\'endorment')
+    }
+    if (message.content === 'lg!djayd'){
+        Village.send('Coucou <@!257303430903627777>')
+        return Village.send('lg!djayd')
     }
     if (message.content === 'lg!jour'){
-        return Village.send('Le jour ce l\ève les \@Villageois se r\éveille')
+        return Village.send('Le jour ce l\ève les <@&336273519749103617> se r\éveille')
     }
-    if (message.content === 'lg!vote'){
-        return Village.send('\@Villageois \r C\'est l\'heure des votes \#vote')
+    if (message.content === 'lg!votez'){
+        return Village.send('<@&336273519749103617> \r C\'est l\'heure des votes <#336607863235674112>:')
     }
     if(message.content === 'lg!clos'){
-        Vote.send('\@Villageois \r C\'est la fin des votes fin du jour: '+jour)
+        Vote.send('<@&336273519749103617> \r C\'est la fin des votes fin du jour: '+jour)
         return jour=jour+1
     }
     if(message.content === 'lg!fin'){
-        Village.send('\@Villageois \r C\'est la fin de la partie')
+        Village.send('<@&336273519749103617> \r C\'est la fin de la partie')
         return jour=1
     }
     
@@ -143,4 +151,4 @@ function shuffleArray(array) {
     return array;
 }
 
-bot.login('token')
+bot.login('MzM3MjA3MDUwNzkyNzMwNjI0.DFD6zw.bOd4KWsriFrrAzS2rwIbXw3xRW4')

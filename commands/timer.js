@@ -10,7 +10,7 @@ module.exports = class Timer extends Command {
     static action(message){
         let args = message.content.split(' ')
         args.shift()
-        message.channel.send('\@Villageois \r Vous avez ' + args.join(' ')+' minutes pour d\ébattre #debat')
+        message.channel.send('\@Villageois \r Vous avez ' + args.join(' ')+' minutes pour d\ébattre <#337631848018477056>')
     }
 
 }

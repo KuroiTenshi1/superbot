@@ -9,10 +9,12 @@ module.exports = class Liste extends Command {
 
     static action(message){
         let args = message.content.split(' ')
-        var role[]
+        var role=[]
         for (var i = 1; i < args.length; i++) {
             role[i-1] = args[i]
+            console.log(message.content)
+
 	    }
-        return role
+        return role[1]
     }
 }

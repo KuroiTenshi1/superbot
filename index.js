@@ -5,11 +5,13 @@ const Timer = require('./commands/timer')
 const Vote = require('./commands/vote')
 const Role = require('./commands/role')
 const Give = require('./commands/give')
+const Liste = require('./commands/liste')
 
 const ft = require('./functions/ft')
 var jour = 1
 var players = [];
 var names=[];
+var listes=[];
 var roles={
   "loup" : "336910690361016330",
   "voyante" : "336910820539760650",
@@ -71,21 +73,21 @@ bot.on('message', function (message){
     //const Vote = message.guild.channels.find('name', 'vote')
 	const sender = message.member.id
 
-// fonction qui recupere le salon par son nom
-function salon(room){
-    return message.guild.channels.find('name', room)
-}
+    // fonction qui recupere le salon par son nom
+    function salon(room){
+        return message.guild.channels.find('name', room)
+    }
 
     console.log(message.content)
 
 
     //Message écrit
 
-    let commandUsed = Give.parse(message) || Timer.parse(message)
+    let commandUsed = Google.parse(message) || Timer.parse(message)
     if(message.content === 'lg!join'){
 		var role = message.guild.roles.find('name', 'Villageois').id
    	    message.member.addRole(role)
-   	    return Village.send('<@'+sender+'> a rejoint la partie.')
+   	    return salon('Village').send('<@'+sender+'> a rejoint la partie.')
     }
     if (message.content === 'lg!ping'){
         return message.channel.send('pong')
@@ -142,6 +144,18 @@ function salon(room){
          } else {
             message.channel.send('Le joueur '+ players[id].pseudo + ' est deja inscrit sous le role de ' + players[id].role) //dans le cas ou le joueur ete deja enregistre par le bot
          }
+    }
+    if(message.content.startsWith('lg!liste')){
+		let args = message.content.split(' ');
+        for (var i = 1; i < args.length; i++) {
+            listes.push(args[i]);
+            console.log(listes[i-1]);
+	    }
+    }
+    if(message.content === 'lg!lister'){
+		for (var i = 0; i < listes.length; i++) {
+            message.channel.send(listes[i])
+	    }
     }
     
     //Pour tester lobjet Joueur

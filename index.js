@@ -79,7 +79,7 @@ function salon(room){
         return jour=jour+1
     }
     if(message.content === 'lg!fin'){
-        Village.send('<@&336273519749103617> \r C\'est la fin de la partie')
+        salon('Village').send('<@&336273519749103617> \r C\'est la fin de la partie')
         return jour=1
     }
     

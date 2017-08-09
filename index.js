@@ -39,6 +39,7 @@ bot.on('message', function (message){
     //const Vote = message.guild.channels.find('name', 'vote')
 	const sender = message.member.id
 
+// fonction qui recupere le salon par son nom
 function salon(room){
     return message.guild.channels.find('name', room)
 }
@@ -58,20 +59,20 @@ function salon(room){
         return message.channel.send('pong')
     }
     if (message.content === 'lg!out'){
-        return ft.salon('Village').ifzhiofhzi()
+        return salon('Village').ifzhiofhzi()
     }
     if (message.content === 'lg!nuit'){
         return salon('village').send('La nuit tombe les <@&336273519749103617> s\'endorment')
     }
     if (message.content === 'lg!djayd'){
         Village.send('Coucou <@!257303430903627777>')
-        return Village.send('lg!djayd')
+        return salon('Village').send('lg!djayd')
     }
     if (message.content === 'lg!jour'){
-        return Village.send('Le jour ce l\ève les <@&336273519749103617> se r\éveille')
+        return salon('Village').send('Le jour ce l\ève les <@&336273519749103617> se r\éveille')
     }
     if (message.content === 'lg!votez'){
-        return Village.send('<@&336273519749103617> \r C\'est l\'heure des votes <#336607863235674112>:')
+        return salon('Village').send('<@&336273519749103617> \r C\'est l\'heure des votes <#336607863235674112>:')
     }
     if(message.content === 'lg!clos'){
         Vote.send('<@&336273519749103617> \r C\'est la fin des votes fin du jour: '+jour)

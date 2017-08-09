@@ -17,7 +17,6 @@ function player(pseudo, role, alive) {
 }
 
 
-
 bot.on('ready', function(){
     //bot.user.setAvatar('./img/partial-solar-eclipse-clouds.jpg').catch(console.error)
     //bot.user.setUsername('Eclipse').catch(console.error)
@@ -40,6 +39,10 @@ bot.on('message', function (message){
     //const Vote = message.guild.channels.find('name', 'vote')
 	const sender = message.member.id
 
+function salon(room){
+    return message.guild.channels.find('name', room)
+}
+
     console.log(message.content)
 
 
@@ -58,7 +61,7 @@ bot.on('message', function (message){
         return ft.salon('Village').ifzhiofhzi()
     }
     if (message.content === 'lg!nuit'){
-        return ft.salon('Village').send('La nuit tombe les <@&336273519749103617> s\'endorment')
+        return salon('village').send('La nuit tombe les <@&336273519749103617> s\'endorment')
     }
     if (message.content === 'lg!djayd'){
         Village.send('Coucou <@!257303430903627777>')

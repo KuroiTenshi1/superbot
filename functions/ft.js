@@ -1,6 +1,6 @@
 module.exports = class ft{
 
-static salon(room){
+static salon(message, room){
     return message.guild.channels.find('name', room)
 }
 

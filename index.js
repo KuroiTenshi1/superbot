@@ -175,9 +175,9 @@ bot.on('message', function (message){
         } else if (number > 6 & number <= 8){
             cartes=["cupidon","enfant sauvage","voyante","salvateur","loup","sorciere"]
         } else if (number > 8 && number <=11){
-            cartes=["cupidon","enfant sauvage","voyante","salvateur","loup", "loup-garou","sorciere","chasseur"]
+            cartes=["cupidon","enfant sauvage","voyante","salvateur","loup", "loup","sorciere","chasseur"]
         } else {
-            cartes=["cupidon","enfant sauvage","voyante","salvateur","loup", "loup-garou","sorciere","chasseur", "frere","frere","frere"]
+            cartes=["cupidon","enfant sauvage","voyante","salvateur","loup", "loup","sorciere","chasseur", "frere","frere","frere"]
         }
 
         var random_names=shuffleArray(names) //melange les joueurs avant de distribuer les roles
@@ -215,4 +215,4 @@ function shuffleArray(array) {
     return array;
 }
 
-bot.login('MzM3MjA3MDUwNzkyNzMwNjI0.DFD6zw.bOd4KWsriFrrAzS2rwIbXw3xRW4')
+bot.login('token')

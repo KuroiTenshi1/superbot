@@ -3,6 +3,8 @@ const bot = new Discord.Client()
 const Google = require('./commands/google')
 const Timer = require('./commands/timer')
 const Vote = require('./commands/vote')
+const Role = require('./commands/role')
+
 const ft = require('./functions/ft')
 var jour = 1
 var players = [];
@@ -77,7 +79,7 @@ function salon(room){
 
     //Message écrit
 
-    let commandUsed = Google.parse(message) || Timer.parse(message)
+    let commandUsed = Role.parse(message) || Timer.parse(message)
     if(message.content === 'lg!join'){
 		var role = message.guild.roles.find('name', 'Villageois').id
    	    message.member.addRole(role)

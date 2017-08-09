@@ -14,7 +14,7 @@ var roles={
   "voyante" : "336910820539760650",
   "sorciere" :"336910769742544899",
   "cupidon" :"336965266342805504",
-  "Petite fille" :"336910803745636353",
+  "petite fille" :"336910803745636353",
   "chasseur" :"336910847005818881",
   "voleur" :"336910861123977218",
   "salvateur" :"336910791167180801",
@@ -40,7 +40,8 @@ var roles={
 };
 
 //OBJECT CONSTRUCTOR - Player
-function player(pseudo, role, alive) {
+function player(user, pseudo, role, alive) {
+    this.user= user;
     this.pseudo = pseudo;
     this.role = role;
     this.alive = alive;
@@ -112,15 +113,17 @@ function salon(room){
         salon('Village').send('<@&336273519749103617> \r C\'est la fin de la partie')
         return jour=1
     }
+
     if(message.content === 'lg!role'){
       var nom_du_role = "loup"
       var msg = "<@&"+ roles[nom_du_role]+">"
-     	message.channel.send(msg)
+      message.channel.send(msg)
     }
     
     //Pour sinscrire dans le loup-garou et creer un objet Joueur
     if(message.content === 'lg!register'){
         var id = message.member.id.toString() //Cette variable sert à identifier le joueur
+        var user = message.member
         var registered = false //Cette variable sert à savoir si le joueur a deja ete identifie
 
 
@@ -132,7 +135,7 @@ function salon(room){
 
 
          if (registered===false){ //si la personne n'a pas ete trouvée dans l'array name[], le bot cree un nouveau joueur
-            players[id] = new player(message.member.displayName, "Villageois", true) //creation de l'objet joueur
+            players[id] = new player(user,message.member.displayName, "Villageois", true) //creation de l'objet joueur
             names.push(id) //rajoute l'id du joueur dans la liste des joueurs enregistrés
             message.channel.send('Le joueur '+ players[id].pseudo + ' est inscrit sous le role de ' + players[id].role)
          } else {
@@ -153,19 +156,20 @@ function salon(room){
 
         //determine les roles à distribuer en fonction du nombre de joueurs
         if (number <= 6){
-            roles=["loup-garou","voyante","salvateur","sorcière"]
+            cartes=["loup","voyante","salvateur","sorciere"]
         } else if (number > 6 & number <= 8){
-            roles=["cupidon","enfant sauvage","voyante","salvateur","loup-garou","sorcière"]
+            cartes=["cupidon","enfant sauvage","voyante","salvateur","loup","sorciere"]
         } else if (number > 8 && number <=11){
-            roles=["cupidon","enfant sauvage","voyante","salvateur","loup-garou", "loup-garou","sorcière","chasseur"]
+            cartes=["cupidon","enfant sauvage","voyante","salvateur","loup", "loup-garou","sorciere","chasseur"]
         } else {
-            roles=["cupidon","enfant sauvage","voyante","salvateur","loup-garou", "loup-garou","sorcière","chasseur", "frere","frere","frere"]
+            cartes=["cupidon","enfant sauvage","voyante","salvateur","loup", "loup-garou","sorciere","chasseur", "frere","frere","frere"]
         }
 
         var random_names=shuffleArray(names) //melange les joueurs avant de distribuer les roles
 
         for (i=0;i<random_names.length;i++){ //distribution des roles
-            players[random_names[i]].role = roles[i]
+            players[random_names[i]].role = cartes[i]
+            players[random_names[i]].user.addRole(roles[cartes[i]])
         }
 
         message.channel.send('La partie vient de se lancer avec '+ number + ' joueurs')

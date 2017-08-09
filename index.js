@@ -3,6 +3,7 @@ const bot = new Discord.Client()
 const Google = require('./commands/google')
 const Timer = require('./commands/timer')
 const Vote = require('./commands/vote')
+const ft = require('./functions/ft')
 var jour = 1
 var players = [];
 var names=[];
@@ -35,8 +36,9 @@ bot.on('guildMemberRemove', function(member){
 
 bot.on('message', function (message){
 
-    const Village = message.guild.channels.find('name', 'village')
-    const Vote = message.guild.channels.find('name', 'vote')
+    //const Village = message.guild.channels.find('name', 'village')
+    //const Vote = message.guild.channels.find('name', 'vote')
+	const sender = message.member.id
 
     console.log(message.content)
 
@@ -44,14 +46,19 @@ bot.on('message', function (message){
     //Message écrit
 
     let commandUsed = Google.parse(message) || Timer.parse(message)
+    if(message.content === 'lg!join'){
+		var role = message.guild.roles.find('name', 'Villageois').id
+   	    message.member.addRole(role)
+   	    return Village.send('<@'+sender+'> a rejoint la partie.')
+    }
     if (message.content === 'lg!ping'){
         return message.channel.send('pong')
     }
     if (message.content === 'lg!out'){
-        return Village.ifzhiofhzi()
+        return ft.salon('Village').ifzhiofhzi()
     }
     if (message.content === 'lg!nuit'){
-        return Village.send('La nuit tombe les <@&336273519749103617> s\'endorment')
+        return ft.salon('Village').send('La nuit tombe les <@&336273519749103617> s\'endorment')
     }
     if (message.content === 'lg!djayd'){
         Village.send('Coucou <@!257303430903627777>')

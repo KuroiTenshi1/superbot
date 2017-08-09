@@ -4,6 +4,7 @@ const Google = require('./commands/google')
 const Timer = require('./commands/timer')
 const Vote = require('./commands/vote')
 const Role = require('./commands/role')
+const Give = require('./commands/give')
 
 const ft = require('./functions/ft')
 var jour = 1
@@ -79,7 +80,7 @@ function salon(room){
 
     //Message écrit
 
-    let commandUsed = Role.parse(message) || Timer.parse(message)
+    let commandUsed = Give.parse(message) || Timer.parse(message)
     if(message.content === 'lg!join'){
 		var role = message.guild.roles.find('name', 'Villageois').id
    	    message.member.addRole(role)

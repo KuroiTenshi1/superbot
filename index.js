@@ -12,6 +12,8 @@ var jour = 1
 var players = [];
 var names=[];
 var listes=[];
+
+//LISTE DES CARTES (contenant ID des roles correspondants)
 var roles={
   "loup" : "336910690361016330",
   "voyante" : "336910820539760650",
@@ -44,31 +46,36 @@ var roles={
 
 //OBJECT CONSTRUCTOR - Player
 function player(user, pseudo, role, alive) {
-    this.user= user;
-    this.pseudo = pseudo;
+    this.user= user; 
+    this.pseudo = pseudo; 
     this.role = role;
     this.alive = alive;
 }
 
-
+//=====================CONFIGURATION DU BOT=========================
 bot.on('ready', function(){
     //bot.user.setAvatar('./img/partial-solar-eclipse-clouds.jpg').catch(console.error)
     //bot.user.setUsername('Eclipse').catch(console.error)
     bot.user.setGame('En pr\éparation').catch(console.error)
 })
 
-bot.on('guildMemberAdd', function(member){
-    var textChannel = member.guild.channels.find('name', 'general')
-    textChannel.send('Ho merde <@!'+member.id+'> est venue nous faire chier')
-})
+	//MESSAGE D'ACCUEIL
+	bot.on('guildMemberAdd', function(member){
+	    var textChannel = member.guild.channels.find('name', 'general')
+	    textChannel.send('Ho merde <@!'+member.id+'> est venue nous faire chier')
+	})
 
-bot.on('guildMemberRemove', function(member){
-    var textChannel = member.guild.channels.find('name', 'general')
-    textChannel.send('Enfin débarassé de <@!'+member.id+'>')
-})
+	//MESSAGE DE DEPART
+	bot.on('guildMemberRemove', function(member){
+	    var textChannel = member.guild.channels.find('name', 'general')
+	    textChannel.send('Enfin débarassé de <@!'+member.id+'>')
+	})
 
+
+
+
+//======================== COMMANDES ===============================
 bot.on('message', function (message){
-
     //const Village = message.guild.channels.find('name', 'village')
     //const Vote = message.guild.channels.find('name', 'vote')
 	const sender = message.member.id
@@ -77,34 +84,44 @@ bot.on('message', function (message){
     function salon(room){
         return message.guild.channels.find('name', room)
     }
-
     console.log(message.content)
-
-
-    //Message écrit
-
     let commandUsed = Google.parse(message) || Timer.parse(message)
+    
+    
+    //----------- JOIN-------------------
     if(message.content === 'lg!join'){
 		var role = message.guild.roles.find('name', 'Villageois').id
    	    message.member.addRole(role)
    	    return salon('Village').send('<@'+sender+'> a rejoint la partie.')
     }
+	
+    //------------PING----------------
     if (message.content === 'lg!ping'){
         return message.channel.send('pong')
     }
+	
+    //------------OUT-------------
     if (message.content === 'lg!out'){
         return salon('Village').ifzhiofhzi()
     }
+	
+    //-----------NUIT----------
     if (message.content === 'lg!nuit'){
         return salon('village').send('La nuit tombe les <@&336273519749103617> s\'endorment')
     }
+	
+    //----------DJAYD---------
     if (message.content === 'lg!djayd'){
         Village.send('Coucou <@!257303430903627777>')
         return salon('Village').send('lg!djayd')
     }
+	
+    //--------JOUR--------
     if (message.content === 'lg!jour'){
         return salon('Village').send('Le jour ce l\ève les <@&336273519749103617> se r\éveille')
     }
+	
+    //-------VOTE-------
     if (message.content === 'lg!votez'){
         return salon('Village').send('<@&336273519749103617> \r C\'est l\'heure des votes <#336607863235674112>:')
     }
@@ -112,30 +129,32 @@ bot.on('message', function (message){
         Vote.send('<@&336273519749103617> \r C\'est la fin des votes fin du jour: '+jour)
         return jour=jour+1
     }
+	
+    //------FIN DE PARTIE---------
     if(message.content === 'lg!fin'){
         salon('Village').send('<@&336273519749103617> \r C\'est la fin de la partie')
         return jour=1
     }
 
+
+    //------MENTIONNER UN ROLE------
     if(message.content === 'lg!role'){
       var nom_du_role = "loup"
       var msg = "<@&"+ roles[nom_du_role]+">"
       message.channel.send(msg)
     }
     
-    //Pour sinscrire dans le loup-garou et creer un objet Joueur
+    //-----S'ENREGISTRER------
     if(message.content === 'lg!register'){
         var id = message.member.id.toString() //Cette variable sert à identifier le joueur
         var user = message.member
         var registered = false //Cette variable sert à savoir si le joueur a deja ete identifie
-
 
         for (i=0; i<names.length;i++){ //recherche dans l'array names[] pour savoir si le joueur est deja inscrit dedans. Si oui, registered=true
             if (names[i]===id){
                 var registered = true
             }
         }
-
 
          if (registered===false){ //si la personne n'a pas ete trouvée dans l'array name[], le bot cree un nouveau joueur
             players[id] = new player(user,message.member.displayName, "Villageois", true) //creation de l'objet joueur
@@ -145,6 +164,8 @@ bot.on('message', function (message){
             message.channel.send('Le joueur '+ players[id].pseudo + ' est deja inscrit sous le role de ' + players[id].role) //dans le cas ou le joueur ete deja enregistre par le bot
          }
     }
+	
+    //-------MODIFIER LES CARTES--------	
     if(message.content.startsWith('lg!liste')){
 		let args = message.content.split(' ');
         for (var i = 1; i < args.length; i++) {
@@ -152,20 +173,22 @@ bot.on('message', function (message){
             console.log(listes[i-1]);
 	    }
     }
+	
+    //--------LISTER LES ROLES----------	
     if(message.content === 'lg!lister'){
 		for (var i = 0; i < listes.length; i++) {
             message.channel.send(listes[i])
 	    }
     }
     
-    //Pour tester lobjet Joueur
+    //---------AFFICHER SON PROFIL-------
     if(message.content === 'lg!me'){
         try{
             message.channel.send('Vous etes bien '+ players[message.member.id.toString()].pseudo + ' dont le role est ' + players[message.member.id.toString()].role)
         }catch(e){console.log(e)}
     }
 
-    //Pour lancer la partie et distribuer les roles
+    //-------LANCER LA PARTIE------------
     if(message.content === 'lg!start'){
         var number = names.length //determine le nombre de joueurs enregistrés
 
@@ -192,12 +215,16 @@ bot.on('message', function (message){
 
 
     
-    //Gestion du serveur
-    if (message.content === 'lg!membre'){ // compte le nombre de membre dans le serveur
+    //==========GESTION DU SERVEUR=====================
+
+	// compte le nombre de membre dans le serveur
+    if (message.content === 'lg!membre'){ 
         var number = message.guild.memberCount
         return message.channel.send('nombre de membres '+number)
     }
-    if (message.content === 'lg!dispoguild'){ // verifie si guild existe
+	
+	// verifie si guild existe
+    if (message.content === 'lg!dispoguild'){ 
         var number = message.guild.available
         return message.channel.send('disp '+number)
     }

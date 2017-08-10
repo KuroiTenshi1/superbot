@@ -12,7 +12,7 @@ La version actuelle du bot Eclipse permet de :
 
 #EN COURS
 - Modifier les roles par defaut a distribuer avant de lancer la partie a l'aide d'une commange (LISTE/ROLES/CARTES)
-- Commenter/Organiser le code, afficher les messages du bot dans village, afficher le lg!me en privé et restreindre l'utilisation du lg!start au narrateur.
+- Commenter/Organiser le code, afficher les messages du bot dans village, ajouter le role villageois quand on lg!register, afficher le lg!me en privé et restreindre l'utilisation du lg!start au narrateur.
 
 #A DEVELOPPER
 - La nuit, il execute les actions de ces roles, chacun à leur tour (ACTION)
